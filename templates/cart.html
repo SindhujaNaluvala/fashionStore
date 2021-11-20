@@ -1,0 +1,20 @@
+
+{% extends 'b.html' %}
+{% block body%}
+        <div class="container px-4">
+            {% for i in products %}
+        <div class="card col-sm-3 my-4">
+            <img class="card-img-top" src='static/img/{{i.category}}/{{i.picture}}' alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{i.productName}}</h5>
+              <p class="card-text">Price:${{i.price}}</p>
+              {{i.id}}
+              <a href="/deleteCartItem/{{i.productName}}" class="btn btn-primary">Delete </a>
+            </div>
+          </div>
+          {% endfor %}
+          <a href="/checkout" class="btn btn-primary">Checkout</a>
+          </div>
+          </div>
+    {% endblock %}
+  

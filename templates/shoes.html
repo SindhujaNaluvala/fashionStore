@@ -1,0 +1,18 @@
+
+{% extends 'b.html' %}
+{% block body%}
+        <div class="container px-4">
+            <div class="row">
+            {% for i in products %}
+        <div class="card col-sm-3 my-4">
+            <img class="card-img-top" src='static/img/{{i.category}}/{{i.picture}}' alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{i.pName}}</h5>
+              <p class="card-text">Price:${{i.price}}</p>
+              <a href="/cart/{{i.id}}" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+          {% endfor %}
+          </div>
+          </div>
+{%endblock%}
