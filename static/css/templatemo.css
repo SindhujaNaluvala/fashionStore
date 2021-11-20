@@ -107,7 +107,7 @@ body, ul, li, p, a, label, input, div {
 /* Brand */
 .brand-img {
   filter: grayscale(100%);
-  opacity: 0.5;
+  opacity: 0.6;
   transition: .5s;
 }
 .brand-img:hover {
