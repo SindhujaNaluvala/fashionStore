@@ -58,7 +58,7 @@ def login1():
         user=session["email"]
         return render_template('index.html',user=user)
     else:
-        return("incorrect email or password")
+        return("incorrect emailpassword")
 
 @app.route('/register')
 def register():
