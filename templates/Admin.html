@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fashion-Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="../static/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.ico">
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/templatemo.css">
+    <link rel="stylesheet" href="../static/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="../static/css/fontawesome.min.css">
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="/">
+                Fashion-Store
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="/admin">Products</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/adminUsers">Users</a>
+                    </li>
+                        <li class="nav-item">
+                            Logged in as:Admin
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sign_out">Signout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+ 
+        </div>
+    </nav>
+        <div class="container px-4">
+            <h1>Edit products</h1>
+            <div class="row">
+            {% for i in products %}
+        <div class="card col-sm-3 my-4">
+            <img class="card-img-top" src='static/img/{{i.category}}/{{i.picture}}' alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{i.pName}}</h5>
+              <p class="card-text">Price:${{i.price}}</p>
+              <a href="/product/{{i.pName}}" class="btn btn-primary">DeleteProduct</a>
+            </div>
+          </div>
+          {% endfor %}
+          </div>
+          </div>
+          <div class="container my-5 px-5 align-center">
+            <h2>Add Product</h2>
+            <form action="/addProduct" method="POST">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="productName">ProductName</label>
+                    <input type="text" class="form-control" name="ProductName" placeholder="productName">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="productid">Productid</label>
+                    <input type="text" class="form-control" name="Productid" placeholder="productName">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="ProductCategory">ProductCategory</label>
+                    <input type="text" class="form-control" name="ProductCategory" placeholder="ProductCategory">
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="price">Price:</label>
+                  <input type="text" class="form-control" name="price" placeholder="Price">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="picture">Picture:</label>
+                    <input type="text" class="form-control" name="picture" placeholder="picture">
+                  </div>
+             
+                <button type="submit" class="btn btn-primary">Add<button>
+              </form>
+            </div>
+  </div>
+</body>

@@ -1,0 +1,20 @@
+
+{% extends 'b.html' %}
+{% block body%}
+
+<div class="container my-5 px-5 align-center">
+            <h2>Admin Sign-in</h2>
+            <h2>For Admin Registration <a href="/adminRegister">Click Here</a></h2>
+    <form class="form-signin" action="/adminLogin1" method="POST">
+    <label for="inputEmail" class="sr-only">userName:</label>
+    <div class="col-4 my-3">
+    <input type="name" name="inputEmail" class="form-control" placeholder="Email address" required autofocus></div>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <div class="col-4 my-3">
+    <input type="password" name="inputPassword" class="form-control" placeholder="Password" required></div>
+    <div class="checkbox mb-3">
+    </div>
+    <button class="btn btn-sm    btn-primary btn-block" type="submit">Sign in</button>
+  </form>
+  </div>
+  {% endblock %}
